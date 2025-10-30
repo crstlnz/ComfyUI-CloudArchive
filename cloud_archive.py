@@ -122,7 +122,7 @@ class S3Uploader:
                 rel_path = file_name
             
             # Generate S3 key (organize by session ID, preserve directory structure)
-            s3_key = f"{self.s3_prefix}/{self.session_id}/{rel_path}"
+            s3_key = f"{self.s3_prefix}/{rel_path}"
             
             # Upload the file
             self.s3_client.upload_file(file_path, self.s3_bucket, s3_key)
